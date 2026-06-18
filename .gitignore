@@ -216,3 +216,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+echo "data/raw/goodreads/*.json" >> .gitignore
