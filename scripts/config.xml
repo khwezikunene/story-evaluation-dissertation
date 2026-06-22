@@ -1,0 +1,12 @@
+<View>
+  <Text name="text" value="$text"/>
+  <Header value="Which dimensions are present in this sentence?"/>
+  <Choices name="dimensions" toName="text" choice="multiple">
+    <Choice value="Narrative Structure &amp; Quality"/>
+    <Choice value="Character &amp; Emotion"/>
+    <Choice value="Originality"/>
+    <Choice value="Immersion"/>
+    <Choice value="Thematic Depth"/>
+    <Choice value="Writing Style"/>
+  </Choices>
+</View>
