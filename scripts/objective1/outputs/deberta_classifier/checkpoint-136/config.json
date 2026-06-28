@@ -45,7 +45,6 @@
   ],
   "position_biased_input": false,
   "position_buckets": 256,
-  "problem_type": "multi_label_classification",
   "relative_attention": true,
   "share_att_key": true,
   "tie_word_embeddings": true,
