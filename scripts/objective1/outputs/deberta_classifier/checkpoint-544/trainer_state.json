@@ -1,0 +1,126 @@
+{
+  "best_global_step": 544,
+  "best_metric": 0.29429680372753847,
+  "best_model_checkpoint": "outputs/deberta_classifier/checkpoint-544",
+  "epoch": 4.0,
+  "eval_steps": 500,
+  "global_step": 544,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "epoch": 1.0,
+      "grad_norm": 3.269697904586792,
+      "learning_rate": 8.905228758169935e-06,
+      "loss": 1.2710641973158892,
+      "step": 136
+    },
+    {
+      "epoch": 1.0,
+      "eval_f1_Character & Emotion": 0.31932773109243695,
+      "eval_f1_Immersion": 0.0,
+      "eval_f1_Narrative Structure & Quality": 0.0,
+      "eval_f1_Originality": 0.0,
+      "eval_f1_Thematic Depth": 0.0,
+      "eval_f1_Writing Style": 0.2641509433962264,
+      "eval_f1_macro": 0.09724644574811055,
+      "eval_f1_micro": 0.17869415807560138,
+      "eval_loss": 1.51767098903656,
+      "eval_runtime": 0.6224,
+      "eval_samples_per_second": 615.374,
+      "eval_steps_per_second": 38.561,
+      "step": 136
+    },
+    {
+      "epoch": 2.0,
+      "grad_norm": 4.534528732299805,
+      "learning_rate": 6.683006535947713e-06,
+      "loss": 1.2074801501105814,
+      "step": 272
+    },
+    {
+      "epoch": 2.0,
+      "eval_f1_Character & Emotion": 0.4429065743944637,
+      "eval_f1_Immersion": 0.13333333333333333,
+      "eval_f1_Narrative Structure & Quality": 0.4647887323943662,
+      "eval_f1_Originality": 0.1262135922330097,
+      "eval_f1_Thematic Depth": 0.09836065573770492,
+      "eval_f1_Writing Style": 0.2830188679245283,
+      "eval_f1_macro": 0.258103626002901,
+      "eval_f1_micro": 0.3051948051948052,
+      "eval_loss": 1.3703633546829224,
+      "eval_runtime": 0.6302,
+      "eval_samples_per_second": 607.76,
+      "eval_steps_per_second": 38.084,
+      "step": 272
+    },
+    {
+      "epoch": 3.0,
+      "grad_norm": 2.6906418800354004,
+      "learning_rate": 4.460784313725491e-06,
+      "loss": 1.0463489083682789,
+      "step": 408
+    },
+    {
+      "epoch": 3.0,
+      "eval_f1_Character & Emotion": 0.46825396825396826,
+      "eval_f1_Immersion": 0.15384615384615385,
+      "eval_f1_Narrative Structure & Quality": 0.5517241379310345,
+      "eval_f1_Originality": 0.1282051282051282,
+      "eval_f1_Thematic Depth": 0.08547008547008547,
+      "eval_f1_Writing Style": 0.3312883435582822,
+      "eval_f1_macro": 0.2864646362107754,
+      "eval_f1_micro": 0.33113828786453436,
+      "eval_loss": 1.3863582611083984,
+      "eval_runtime": 0.6308,
+      "eval_samples_per_second": 607.13,
+      "eval_steps_per_second": 38.045,
+      "step": 408
+    },
+    {
+      "epoch": 4.0,
+      "grad_norm": 9.930646896362305,
+      "learning_rate": 2.2385620915032683e-06,
+      "loss": 0.9511378793155446,
+      "step": 544
+    },
+    {
+      "epoch": 4.0,
+      "eval_f1_Character & Emotion": 0.4777327935222672,
+      "eval_f1_Immersion": 0.15827338129496402,
+      "eval_f1_Narrative Structure & Quality": 0.5517241379310345,
+      "eval_f1_Originality": 0.12987012987012986,
+      "eval_f1_Thematic Depth": 0.09375,
+      "eval_f1_Writing Style": 0.35443037974683544,
+      "eval_f1_macro": 0.29429680372753847,
+      "eval_f1_micro": 0.33648393194706994,
+      "eval_loss": 1.4042513370513916,
+      "eval_runtime": 0.6324,
+      "eval_samples_per_second": 605.621,
+      "eval_steps_per_second": 37.95,
+      "step": 544
+    }
+  ],
+  "logging_steps": 500,
+  "max_steps": 680,
+  "num_input_tokens_seen": 0,
+  "num_train_epochs": 5,
+  "save_steps": 500,
+  "stateful_callbacks": {
+    "TrainerControl": {
+      "args": {
+        "should_epoch_stop": false,
+        "should_evaluate": false,
+        "should_log": false,
+        "should_save": true,
+        "should_training_stop": false
+      },
+      "attributes": {}
+    }
+  },
+  "total_flos": 570192359159808.0,
+  "train_batch_size": 16,
+  "trial_name": null,
+  "trial_params": null
+}
