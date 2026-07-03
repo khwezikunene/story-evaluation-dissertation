@@ -1,0 +1,149 @@
+{
+  "best_global_step": 680,
+  "best_metric": 0.39163085188663155,
+  "best_model_checkpoint": "outputs/roberta_classifier/checkpoint-680",
+  "epoch": 5.0,
+  "eval_steps": 500,
+  "global_step": 680,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "epoch": 1.0,
+      "grad_norm": 5.877590656280518,
+      "learning_rate": 8.905228758169935e-06,
+      "loss": 1.2752201977898092,
+      "step": 136
+    },
+    {
+      "epoch": 1.0,
+      "eval_f1_Character & Emotion": 0.3269230769230769,
+      "eval_f1_Immersion": 0.0,
+      "eval_f1_Narrative Structure & Quality": 0.4603174603174603,
+      "eval_f1_Originality": 0.12048192771084337,
+      "eval_f1_Thematic Depth": 0.0,
+      "eval_f1_Writing Style": 0.15865384615384615,
+      "eval_f1_macro": 0.17772938518420447,
+      "eval_f1_micro": 0.2545045045045045,
+      "eval_loss": 1.4863309860229492,
+      "eval_runtime": 0.353,
+      "eval_samples_per_second": 1084.903,
+      "eval_steps_per_second": 67.983,
+      "step": 136
+    },
+    {
+      "epoch": 2.0,
+      "grad_norm": 14.98350715637207,
+      "learning_rate": 6.683006535947713e-06,
+      "loss": 1.1280709434958065,
+      "step": 272
+    },
+    {
+      "epoch": 2.0,
+      "eval_f1_Character & Emotion": 0.4946236559139785,
+      "eval_f1_Immersion": 0.15028901734104047,
+      "eval_f1_Narrative Structure & Quality": 0.4943820224719101,
+      "eval_f1_Originality": 0.11827956989247312,
+      "eval_f1_Thematic Depth": 0.1643835616438356,
+      "eval_f1_Writing Style": 0.29245283018867924,
+      "eval_f1_macro": 0.2857351095753195,
+      "eval_f1_micro": 0.31987331749802056,
+      "eval_loss": 1.2106882333755493,
+      "eval_runtime": 0.3279,
+      "eval_samples_per_second": 1168.121,
+      "eval_steps_per_second": 73.198,
+      "step": 272
+    },
+    {
+      "epoch": 3.0,
+      "grad_norm": 7.511784553527832,
+      "learning_rate": 4.460784313725491e-06,
+      "loss": 0.9028350605684168,
+      "step": 408
+    },
+    {
+      "epoch": 3.0,
+      "eval_f1_Character & Emotion": 0.5610859728506787,
+      "eval_f1_Immersion": 0.2184873949579832,
+      "eval_f1_Narrative Structure & Quality": 0.65625,
+      "eval_f1_Originality": 0.13986013986013987,
+      "eval_f1_Thematic Depth": 0.17073170731707318,
+      "eval_f1_Writing Style": 0.4264705882352941,
+      "eval_f1_macro": 0.36214763387019483,
+      "eval_f1_micro": 0.41209406494960804,
+      "eval_loss": 1.168615698814392,
+      "eval_runtime": 0.3292,
+      "eval_samples_per_second": 1163.564,
+      "eval_steps_per_second": 72.913,
+      "step": 408
+    },
+    {
+      "epoch": 4.0,
+      "grad_norm": 22.40369415283203,
+      "learning_rate": 2.2385620915032683e-06,
+      "loss": 0.7408885955810547,
+      "step": 544
+    },
+    {
+      "epoch": 4.0,
+      "eval_f1_Character & Emotion": 0.5535714285714286,
+      "eval_f1_Immersion": 0.21505376344086022,
+      "eval_f1_Narrative Structure & Quality": 0.6888888888888889,
+      "eval_f1_Originality": 0.13861386138613863,
+      "eval_f1_Thematic Depth": 0.2,
+      "eval_f1_Writing Style": 0.5333333333333333,
+      "eval_f1_macro": 0.38824354593677496,
+      "eval_f1_micro": 0.4553686934023286,
+      "eval_loss": 1.2192912101745605,
+      "eval_runtime": 0.3288,
+      "eval_samples_per_second": 1164.908,
+      "eval_steps_per_second": 72.997,
+      "step": 544
+    },
+    {
+      "epoch": 5.0,
+      "grad_norm": 49.5288200378418,
+      "learning_rate": 1.6339869281045754e-08,
+      "loss": 0.6697624991921818,
+      "step": 680
+    },
+    {
+      "epoch": 5.0,
+      "eval_f1_Character & Emotion": 0.5700934579439252,
+      "eval_f1_Immersion": 0.2222222222222222,
+      "eval_f1_Narrative Structure & Quality": 0.6888888888888889,
+      "eval_f1_Originality": 0.14736842105263157,
+      "eval_f1_Thematic Depth": 0.21212121212121213,
+      "eval_f1_Writing Style": 0.509090909090909,
+      "eval_f1_macro": 0.39163085188663155,
+      "eval_f1_micro": 0.4579560155239327,
+      "eval_loss": 1.2163046598434448,
+      "eval_runtime": 0.3285,
+      "eval_samples_per_second": 1165.864,
+      "eval_steps_per_second": 73.057,
+      "step": 680
+    }
+  ],
+  "logging_steps": 500,
+  "max_steps": 680,
+  "num_input_tokens_seen": 0,
+  "num_train_epochs": 5,
+  "save_steps": 500,
+  "stateful_callbacks": {
+    "TrainerControl": {
+      "args": {
+        "should_epoch_stop": false,
+        "should_evaluate": false,
+        "should_log": false,
+        "should_save": true,
+        "should_training_stop": true
+      },
+      "attributes": {}
+    }
+  },
+  "total_flos": 712727667463680.0,
+  "train_batch_size": 16,
+  "trial_name": null,
+  "trial_params": null
+}
