@@ -4,7 +4,7 @@ Arm A: Baseline - direct Qwen prompting on HANNA story text.
 Prompts Qwen directly with a HANNA story, the six dimension descriptions,
 and a set of few-shot examples drawn from the frozen few_shot split. Qwen
 is asked to return a JSON object of predicted scores for all six HANNA
-dimensions. Predictions are saved to results/arm_a_Sbaseline_predictions.parquet
+dimensions. Predictions are saved to results/arm_a_baseline_predictions.parquet
 for comparison against the other arms in 05_evaluate_arms.py.
 
 Usage:
