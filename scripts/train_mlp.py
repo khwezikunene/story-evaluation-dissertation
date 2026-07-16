@@ -27,7 +27,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
 
-import mlp
+import scripts.classifier_mlp as classifier_mlp
 import common
 import config
 
@@ -85,7 +85,7 @@ def train_val_split(x, y, val_fraction, seed):
 
 
 def train_mlp(x_train, y_train, x_val, y_val):
-    model = mlp.MLPRegressor(
+    model = classifier_mlp.MLPRegressor(
         input_dim=len(config.CUSTOM_DIMENSIONS),
         hidden_dim=32,
         output_dim=len(config.HANNA_DIMENSIONS),
@@ -186,7 +186,7 @@ def main():
 
     logger.info(f"Training MLP on {len(mlp_train_df)} mlp_train stories.")
 
-    pipeline = mlp.ClassifierMLPPipeline(load_mlp=False)
+    pipeline = classifier_mlp.ClassifierMLPPipeline(load_mlp=False)
 
     features_df = extract_classifier_features(
         pipeline, mlp_train_df, config.MLP_TRAIN_FEATURES_CACHE, skip_cache=args.skip_feature_cache
