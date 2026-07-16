@@ -71,16 +71,19 @@ def load_generation_model():
 def generate_scores_for_story(story_text, dimension_block, few_shot_block, tokenizer, model):
     prompt = build_prompt(story_text, dimension_block, few_shot_block)
     messages = [{"role": "user", "content": prompt}]
+
     inputs = tokenizer.apply_chat_template(
         messages,
         add_generation_prompt=True,
         return_tensors="pt",
         return_dict=True,
+        enable_thinking=False,
     ).to(model.device)
+
     with torch.no_grad():
         output = model.generate(
             **inputs,
-            max_new_tokens=200,
+            max_new_tokens=500,##400
             do_sample=config.BASELINE_TEMPERATURE > 0,
             temperature=max(config.BASELINE_TEMPERATURE, 1e-5),
             pad_token_id=tokenizer.eos_token_id,
