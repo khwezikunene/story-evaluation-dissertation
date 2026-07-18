@@ -127,12 +127,25 @@ def build_few_shot_block(few_shot_df):
         )
     return "\n\n---\n\n".join(blocks)
 
+ 
+def build_single_dimension_few_shot_block(few_shot_df, dimension):
+    blocks = []
+    for _, row in few_shot_df.iterrows():
+        blocks.append(
+            f"Story:\n{row['story']}\n\n{dimension} score: {float(row[dimension])}"
+        )
+    return "\n\n---\n\n".join(blocks)
+ 
+ 
+def parse_single_score(raw_text):
+    match = re.search(r"-?\d+(\.\d+)?", raw_text)
+    if not match:
+        raise ValueError(f"No numeric score found in model output: {raw_text[:200]}")
+    return float(match.group(0))
+ 
+
 
 def parse_json_scores(raw_text, expected_keys):
-    """Extract a JSON object of dimension scores from model output.
-    Model output can contain extra text around the JSON, so this pulls out
-    the first balanced-looking JSON object and validates the keys.
-    """
     match = re.search(r"\{.*\}", raw_text, re.DOTALL)
     if not match:
         raise ValueError(f"No JSON object found in model output: {raw_text[:200]}")
