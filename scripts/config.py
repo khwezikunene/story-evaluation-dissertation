@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 ########################### Paths ########################### 
-
+###
 PROJECT_ROOT = os.environ.get("PROJECT_ROOT","/user/HS402/kk01697/Documents/dissertation/story-evaluation-dissertation",)
 DATA_DIR = Path("/scratch/kk01697/data/raw/hanna") #os.path.join(PROJECT_ROOT, "data") 
 RESULTS_DIR = os.path.join(PROJECT_ROOT, "results")
