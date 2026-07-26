@@ -3,11 +3,13 @@ from pathlib import Path
 
 ########################### Paths ########################### 
 ###
-PROJECT_ROOT = os.environ.get("PROJECT_ROOT","/user/HS402/kk01697/Documents/dissertation/story-evaluation-dissertation",)
-DATA_DIR = Path("/scratch/kk01697/data/raw/hanna") #os.path.join(PROJECT_ROOT, "data") 
+#PROJECT_ROOT = os.environ.get("PROJECT_ROOT","/user/HS402/kk01697/Documents/dissertation/story-evaluation-dissertation",)
+PROJECT_ROOT = os.environ.get("PROJECT_ROOT","C:\\Users\\Khwezi Iman\\Desktop\\dissertation\\story-evaluation-dissertation",)
+#DATA_DIR = Path("/scratch/kk01697/data/raw/hanna") #os.path.join(PROJECT_ROOT, "data") 
+DATA_DIR = Path("C:\\Users\\Khwezi Iman\\Desktop\\dissertation\\story-evaluation-dissertation\\data\\raw\\hanna")
 RESULTS_DIR = os.path.join(PROJECT_ROOT, "results")
 #MODELS_DIR = os.path.join(PROJECT_ROOT, "scripts/models")
-MODELS_DIR = Path("/user/HS402/kk01697/Documents/dissertation/story-evaluation-dissertation/scripts/models")
+MODELS_DIR = Path("C:\\Users\\Khwezi Iman\\Desktop\\dissertation\\story-evaluation-dissertation\\scripts\\models")
 
 # HANNA dataset. Expected columns: story_id, story, and one column per HANNA dimension 
 # containing the gold human-annotated score.
