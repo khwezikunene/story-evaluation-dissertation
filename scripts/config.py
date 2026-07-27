@@ -9,7 +9,7 @@ PROJECT_ROOT = os.environ.get("PROJECT_ROOT","C:\\Users\\Khwezi Iman\\Desktop\\d
 DATA_DIR = Path("C:\\Users\\Khwezi Iman\\Desktop\\dissertation\\story-evaluation-dissertation\\data\\raw\\hanna")
 RESULTS_DIR = os.path.join(PROJECT_ROOT, "results")
 #MODELS_DIR = os.path.join(PROJECT_ROOT, "scripts/models")
-MODELS_DIR = Path("C:\\Users\\Khwezi Iman\\Desktop\\dissertation\\story-evaluation-dissertation\\scripts\\models")
+MODELS_DIR = Path("C:\\Users\\Khwezi Iman\\Desktop\\dissertation\\story-evaluation-dissertation\\scripts\\objective1\\outputs")
 
 # HANNA dataset. Expected columns: story_id, story, and one column per HANNA dimension 
 # containing the gold human-annotated score.
@@ -25,7 +25,7 @@ HANNA_SPLIT_PATH = os.path.join(DATA_DIR, "hanna_split.csv")
 
 # Trained classifier and MLP checkpoints from the main proposed dissertation pipeline.
 CLASSIFIER_BASE_MODEL = os.environ.get("CLASSIFIER_BASE_MODEL", "Qwen/Qwen3-1.7B")
-CLASSIFIER_LORA_PATH = os.path.join(MODELS_DIR, "classifier_lora_adapter")
+CLASSIFIER_LORA_PATH = os.path.join(MODELS_DIR, "qwen3_lora_classifier")#"classifier_lora_adapter")
 CLASSIFIER_HEAD_PATH = os.path.join(MODELS_DIR, "classifier_head.pt")
 MLP_WEIGHTS_PATH = os.path.join(MODELS_DIR, "mlp_regressor.pt")
 

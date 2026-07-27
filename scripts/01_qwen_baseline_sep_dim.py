@@ -59,12 +59,11 @@ def load_generation_model():
     tokenizer = AutoTokenizer.from_pretrained(config.GENERATION_MODEL)
     model = AutoModelForCausalLM.from_pretrained(
         config.GENERATION_MODEL,
-        torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+        dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
         device_map="auto" if torch.cuda.is_available() else None,
     )
     model.eval()
-    return tokenizer, model
- 
+    return tokenizer, model 
  
 def generate_single_dimension_score(story_text, dimension, few_shot_block, tokenizer, model):
     prompt = build_prompt(story_text, dimension, few_shot_block)
@@ -116,6 +115,8 @@ def main():
     split_df = common.load_hanna_split()
     test_df = common.get_test_split(hanna_df, split_df)
     few_shot_df = common.get_few_shot_examples(hanna_df, split_df, n_examples=args.n_few_shot)
+
+    print(test_df.columns.tolist())
  
     if args.limit:
         test_df = test_df.head(args.limit)
@@ -139,6 +140,7 @@ def main():
                 {
                     "story_id": row["story_id"],
                     "dimension": dimension,
+                    "story_row": row.name,   ## for a new unique ID
                     "predicted_score": score,
                     "raw_output": raw_text,
                     "parse_error": error,
@@ -151,14 +153,16 @@ def main():
     n_failed = raw_df["parse_error"].notna().sum()
     logger.info(f"Done generating. {len(raw_df)} calls made, {n_failed} parse failures.")
  
-    wide_df = raw_df.pivot(index="story_id", columns="dimension", values="predicted_score").reset_index()
+    ##wide_df = raw_df.pivot(index="story_id", columns="dimension", values="predicted_score").reset_index()
+    wide_df = raw_df.pivot(index=["story_id", "story_row"], columns="dimension", values="predicted_score").reset_index()
+
     wide_df.columns.name = None
  
     try:
         existing_df = common.load_predictions(args.output)
         new_dim_cols = [c for c in wide_df.columns if c != "story_id"]
         existing_df = existing_df.drop(columns=[c for c in new_dim_cols if c in existing_df.columns])
-        wide_df = existing_df.merge(wide_df, on="story_id", how="outer")
+        wide_df = existing_df.merge(wide_df, on=["story_id", "story_row"], how="outer")
         logger.info(
             f"Merged newly-run dimension(s) {new_dim_cols} into existing "
             f"{args.output}, preserving previously-run dimensions."
