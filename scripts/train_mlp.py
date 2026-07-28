@@ -27,7 +27,8 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
 
-import scripts.classifier_mlp as classifier_mlp
+#import scripts.classifier_mlp as classifier_mlp
+import classifier_mlp
 import common
 import config
 
