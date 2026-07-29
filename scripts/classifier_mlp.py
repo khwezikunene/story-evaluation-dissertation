@@ -106,6 +106,10 @@ class ClassifierMLPPipeline:
         logger.info("MLP loaded successfully.")
 
     def predict_proportions(self, text):
+        """Each of the six custom dimensions is a binary presence/absence
+        label (1 if the sentence expresses that dimension, 0 if not), so
+        the classifier head is a single 6-way multi-label sigmoid output
+        rather than a per-dimension softmax."""
 
         inputs = self.tokenizer(
             text,

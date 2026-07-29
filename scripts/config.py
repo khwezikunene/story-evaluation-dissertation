@@ -14,6 +14,7 @@ MODELS_DIR = Path("C:\\Users\\Khwezi Iman\\Desktop\\dissertation\\story-evaluati
 # HANNA dataset. Expected columns: story_id, story, and one column per HANNA dimension 
 # containing the gold human-annotated score.
 HANNA_PATH = os.path.join(DATA_DIR, "hanna_stories_annotations.csv")
+CLASSIFIER_TRAIN_DATA_PATH = os.path.join(PROJECT_ROOT, "data", "processed", "hanna", "annotation_sample_annotated.csv")
 
 # Held-out split file listing story_ids reserved for evaluation, for few-shot example selection
 # and for training the MLP's mapping between custom dimensions and HANNA dimensions. 
